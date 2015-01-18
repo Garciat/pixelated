@@ -1,0 +1,69 @@
+body {
+	overflow: hidden;
+	
+	margin: 0;
+	padding: 0;
+	
+	background: #555;
+	
+	font-family: sans-serif;
+}
+
+#pixelated {
+	position: relative;
+	
+	margin: 0 auto;
+	
+	box-shadow: 0 10px 100px #000;
+}
+	#pixelated > .pixel {
+		float: left;
+		
+		background: #000;
+		
+		transition: all 0.2s;
+	}
+		#pixelated > .pixel > div {
+			width: 100%; height: 100%;
+		}
+	
+	#pixelated > .pixel.active {
+		opacity: 1;
+	}
+	#pixelated > .pixel.border {
+		cursor: pointer;
+		opacity: 1;
+	}
+		#pixelated > .pixel.border:hover {
+			position: relative;
+			z-index: 2;
+			
+			transform: scale(1.2);
+		}
+	#pixelated > .pixel.other {
+		opacity: 0.4;
+	}
+		#pixelated > .pixel.other:hover {
+			opacity: 1;
+		}
+	
+	#pixelated > .score {
+		cursor: default;
+		position: absolute;
+		
+		color: #FFF;
+		text-shadow: 0 3px 10px #000;
+		font-size: 100pt;
+		font-weight: bold;
+		
+		text-align: center;
+		letter-spacing: -8px;
+		
+		opacity: 1;
+		
+		transition: -webkit-transform 0.4s ease-in, opacity 0.3s ease-in;
+	}
+		#pixelated > .score.animate {
+			opacity: 0;
+			transform: scale(3);
+		}
